@@ -23,9 +23,6 @@ def get_neighbors(matrix, row, column, radius=1):
   
   return neighbors
 
-def rgb_to_hex(r, g, b):
-  return ('{:X}{:X}{:X}').format(r, g, b)
-
 def main():
   img = cv2.imread('Algorithm/Averaging filter/noisysalterpepper.png')
 
@@ -34,7 +31,7 @@ def main():
 
   row, column, = new_gray.shape
 
-  radius = 15
+  radius = 10
 
   for i in range(radius, row-radius):
     for j in range(radius, column-radius):

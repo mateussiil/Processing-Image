@@ -28,18 +28,18 @@ def rgb_to_hex(r, g, b):
 
 def main():
   img = cv2.imread('Algorithm/Averaging filter/noisysalterpepper.png')
+
   new_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
   gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-
   row, column, = new_gray.shape
 
-  radius = 20
+  radius = 15
 
   for i in range(radius, row-radius):
     for j in range(radius, column-radius):
 
-      neighbors = get_neighbors(new_gray, i+1, j+1, radius)
+      neighbors = get_neighbors(gray, i+1, j+1, radius)
 
       average = np.sort(neighbors)[int(len(neighbors)/2)]
 
